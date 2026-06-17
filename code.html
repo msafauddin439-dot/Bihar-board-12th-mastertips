@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Academic & Content Management | Next Education</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c3c5d7;
+            border-radius: 10px;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+        }
+    </style>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#783200",
+                      "surface-container-high": "#e7e8ea",
+                      "secondary-container": "#fd761a",
+                      "primary-fixed": "#dbe1ff",
+                      "on-error": "#ffffff",
+                      "on-background": "#191c1e",
+                      "tertiary-container": "#006f4b",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed": "#81f9c1",
+                      "on-surface": "#191c1e",
+                      "surface-variant": "#e1e2e4",
+                      "on-secondary-container": "#5c2400",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#f3f4f6",
+                      "primary-fixed-dim": "#b5c4ff",
+                      "on-secondary-fixed": "#341100",
+                      "background": "#f8f9fb",
+                      "on-surface-variant": "#434654",
+                      "surface-container-highest": "#e1e2e4",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#003fb1",
+                      "on-primary-fixed-variant": "#003dab",
+                      "surface-container": "#edeef0",
+                      "on-primary-container": "#d4dcff",
+                      "surface-dim": "#d9dadc",
+                      "surface-bright": "#f8f9fb",
+                      "inverse-on-surface": "#f0f1f3",
+                      "outline": "#737686",
+                      "on-primary-fixed": "#00174d",
+                      "on-tertiary-fixed": "#002113",
+                      "on-tertiary-container": "#7af3bb",
+                      "primary-container": "#1a56db",
+                      "inverse-primary": "#b5c4ff",
+                      "secondary": "#9d4300",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed-dim": "#ffb690",
+                      "secondary-fixed": "#ffdbca",
+                      "inverse-surface": "#2e3132",
+                      "outline-variant": "#c3c5d7",
+                      "on-primary": "#ffffff",
+                      "surface": "#f8f9fb",
+                      "tertiary": "#005438",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed-dim": "#63dca6",
+                      "surface-tint": "#1353d8",
+                      "on-tertiary-fixed-variant": "#005236"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "xl": "64px",
+                      "xs": "8px",
+                      "sm": "16px",
+                      "lg": "40px",
+                      "base": "4px",
+                      "md": "24px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "label-md": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "caption": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "display-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-outline-variant bg-surface-container-low flex flex-col py-md px-sm z-50">
+<div class="mb-lg px-xs">
+<h1 class="text-headline-md font-headline-lg text-primary tracking-tight">Next Education</h1>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-sm px-sm py-xs bg-primary-container text-on-primary-container font-bold rounded-lg transition-transform translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-md text-label-md">My Courses</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="font-label-md text-label-md">Progress</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-label-md text-label-md">Tests</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto space-y-1 border-t border-outline-variant pt-md">
+<div class="bg-primary/5 rounded-xl p-sm mb-md">
+<p class="text-caption text-primary font-bold mb-xs uppercase tracking-wider">Premium Access</p>
+<button class="w-full bg-secondary text-on-secondary font-label-md text-label-md py-xs rounded-lg hover:brightness-110 transition-all">Upgrade to Premium</button>
+</div>
+<a class="flex items-center gap-sm px-sm py-xs text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-md text-label-md">Help Center</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors rounded-lg text-error" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-grow ml-64 min-h-screen flex flex-col">
+<!-- TopAppBar Shell -->
+<header class="sticky top-0 w-full z-40 flex justify-between items-center px-gutter py-4 bg-surface shadow-sm border-b border-outline-variant/30">
+<div class="flex items-center gap-md">
+<span class="text-headline-md font-headline-md text-primary">Content Management</span>
+<div class="h-6 w-[1px] bg-outline-variant"></div>
+<div class="flex items-center gap-xs">
+<img alt="India Flag" class="w-5 h-4 rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB4r053zSDcXJKufFQ6eqVFDB3mtnfy5PqdJdcE476P0J8EBgrvDsoO5ZlV2X5ipJoOnrUw9nlALaUl6amJbbB7On_5pdvVPr6Bf2e92IsMMGIamuzuL8qt0WYbtlj6wpI_UXRUOxLeWrA2qvoN5-xWDvm81BTMUndnmoqcpO5q4WO748i22jTJawEXIRNTdzUxJqJ1MlgY4CVYo46Eou_Bw0pEqPmfz6WGpjsukQ--6lZ4JKaYAFXNt2Q4FykAnHE2MbfB-7zTQ"/>
+<span class="text-label-md font-label-md text-on-surface-variant">Bihar Board Portal</span>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative flex items-center bg-surface-container-low rounded-full px-sm py-1.5 border border-outline-variant/50 focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-64 px-xs" placeholder="Search syllabus, IDs, or tags..." type="text"/>
+</div>
+<div class="flex items-center gap-sm border-l border-outline-variant pl-md">
+<div class="text-right hidden lg:block">
+<p class="text-label-md font-bold text-on-surface leading-tight">Admin Principal</p>
+<p class="text-caption text-on-surface-variant leading-tight">Curriculum Division</p>
+</div>
+<img alt="Student Profile" class="w-10 h-10 rounded-full border-2 border-primary-fixed" data-alt="A professional headshot of a middle-aged academic administrator in a modern office environment. He is wearing a crisp white shirt and navy blazer, reflecting an air of educational authority and competence. The background is a blurred university library setting with soft, warm lighting that emphasizes a trustworthy and encouraging atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUp2AxdhP8hljuiAtpr3qepWPKbxZ4WOblDnCJI9oPS3nwIYsdfNZs-TBrN80Gk58jVfG0g_Xc8TrG92V-iTA6XlUaGBGCBh-1A-35ZrLsJ6YrffTcy99PtM28e8C44gp4-aPbBXFteDhV86mgcJn-NIidSrzZspqqDO6c2t4-TvI8zC76RsRwXu8fiKUEiL2aU053FFiZ2VhFYFXHhE7oqTpBbIZuer_VN5FishibBeNz7WAAIzRFOT4UcdCUyvMGrL-T8TVa3Q"/>
+</div>
+</div>
+</header>
+<div class="p-gutter space-y-md">
+<!-- Bento Dashboard Header Stats -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-md">
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-sm">
+<div class="p-xs bg-primary/10 text-primary rounded-lg">
+<span class="material-symbols-outlined" data-icon="video_library">video_library</span>
+</div>
+<span class="text-caption font-bold text-tertiary">+12% this month</span>
+</div>
+<p class="text-caption text-on-surface-variant font-bold uppercase tracking-wider">Total Video Lectures</p>
+<h2 class="text-headline-md font-headline-lg text-on-surface">1,284</h2>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-sm">
+<div class="p-xs bg-secondary/10 text-secondary rounded-lg">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<span class="text-caption font-bold text-tertiary">+4.2k pages</span>
+</div>
+<p class="text-caption text-on-surface-variant font-bold uppercase tracking-wider">Study PDF Material</p>
+<h2 class="text-headline-md font-headline-lg text-on-surface">4,592</h2>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-sm">
+<div class="p-xs bg-tertiary/10 text-tertiary rounded-lg">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+</div>
+<span class="text-caption font-bold text-on-surface-variant">Active Tests</span>
+</div>
+<p class="text-caption text-on-surface-variant font-bold uppercase tracking-wider">Mock Tests Published</p>
+<h2 class="text-headline-md font-headline-lg text-on-surface">312</h2>
+</div>
+<!-- CTA Upload Card -->
+<div class="bg-primary-container text-on-primary-container p-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="relative z-10">
+<p class="text-label-md font-bold mb-xs">Fast Actions</p>
+<h3 class="text-body-lg font-bold mb-md">Manage Academic Content</h3>
+</div>
+<button class="relative z-10 w-full bg-surface-container-lowest text-primary font-bold py-sm rounded-lg flex items-center justify-center gap-xs hover:bg-white transition-colors">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                        New Upload
+                    </button>
+<!-- Decorative Element -->
+<div class="absolute -right-4 -bottom-4 opacity-20">
+<span class="material-symbols-outlined text-[120px]" data-icon="cloud_upload">cloud_upload</span>
+</div>
+</div>
+</section>
+<!-- Course Catalog Bento -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-md">
+<div class="lg:col-span-2 space-y-md">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="px-md py-sm bg-surface-container border-b border-outline-variant flex justify-between items-center">
+<h3 class="text-label-md font-bold text-on-surface uppercase tracking-wide">Catalog Overview: Bihar Board</h3>
+<div class="flex gap-xs">
+<span class="px-xs py-0.5 bg-primary text-on-primary rounded text-caption font-bold">Class 10</span>
+<span class="px-xs py-0.5 bg-outline-variant text-on-surface rounded text-caption font-bold">Class 12</span>
+</div>
+</div>
+<div class="p-md grid grid-cols-1 sm:grid-cols-3 gap-md">
+<!-- Category Item -->
+<div class="group cursor-pointer">
+<div class="relative h-40 rounded-lg overflow-hidden mb-sm border border-outline-variant">
+<img alt="Mathematics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A macro shot of complex mathematical equations and geometric sketches on a high-quality textured paper. The lighting is focused and clean, highlighting the precision of the lines. The overall aesthetic is professional and academic, using a soft color palette of grays and blues to evoke a sense of deep study and intellectual rigor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAtr9dT8Woki7DjOZfZtoWoR3ooIS8lpX_8x0quJtHvLXE6amsBW1cF0tys1BiKIgQcxATG4YieyeGWJerczMkSrE6lHA5O9r1r7tQR8kaKWFvlKFl2NMzxNnzU59zAbjyMUvXgTW2CgNPUfSJ2756buxlv48kENlg5menAQTiQJX5JDoqDGt95u-AfL6xHXKBUUEOJEWRgc6ykAxeJ97ZLWvYcUCDQEA8OVGOt-O1maPRU3DphRES1fUsVrLxrVbQf_0aY6UtmQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-sm left-sm text-white">
+<p class="text-caption font-bold">Mathematics</p>
+<p class="text-[10px] opacity-80">14 Units • 120 Lectures</p>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 mb-xs">
+<div class="bg-tertiary h-full rounded-full" style="width: 85%"></div>
+</div>
+<p class="text-caption text-on-surface-variant font-bold">85% Content Ready</p>
+</div>
+<!-- Category Item -->
+<div class="group cursor-pointer">
+<div class="relative h-40 rounded-lg overflow-hidden mb-sm border border-outline-variant">
+<img alt="Science" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant laboratory setup featuring glass flasks filled with colored liquids, reflecting light in a clean, modern science lab. The scene is bright and clinical with soft teal and white tones. The composition is structured and high-density, representing the multifaceted nature of scientific study for Class 10 students." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLRd2X0U3IF1EDBXKnOIp9Dr6Ou6Z0jofo9OvjB5W_6MOByTx-EEa3oq9vxiF2rEo4BpaE-qENIbLNa9wcdio-hGNUZGK17DxR4O9NNv1bsJMrUdVq76HwhKjanqrEcoaVx9sKytHSa940FYGqO44lzLy5mMp8zQXga3jiLIPoezOvWrj9K1OcoSiip3bsuUVOZHR3UmG8MGH0V9j_pWZY6TslH6MbC1XYfZBeBuhzL5ViH_7duAv_LelztJL4XnYlpHV5oPQJhw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-sm left-sm text-white">
+<p class="text-caption font-bold">Science</p>
+<p class="text-[10px] opacity-80">18 Units • 156 Lectures</p>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 mb-xs">
+<div class="bg-tertiary h-full rounded-full" style="width: 70%"></div>
+</div>
+<p class="text-caption text-on-surface-variant font-bold">70% Content Ready</p>
+</div>
+<!-- Category Item -->
+<div class="group cursor-pointer">
+<div class="relative h-40 rounded-lg overflow-hidden mb-sm border border-outline-variant">
+<img alt="Social Science" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vintage world map spread out on a wooden table alongside a classic brass compass and historical manuscripts. The lighting is soft and golden, creating a sense of exploration and heritage. The image is designed to represent history and geography curricula for secondary education with a sophisticated, professional touch." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBooFxoyTfbTkM5PYABeckBZsP8HjUbckGW-E7cbqkBdNjFDSRqgfBW4LB3wNLZnoIzQO8JErnu2hSHkKebqyazTA6ulFovMwM2kfjBBKtAS9Ku-uiqj36RKO3qQpI4ijA6MfBF_OB-4KosyhEAn-Rh4zXPZ4JHYZJ4B9mprEMqOouSn6t0GyWdpzZ2rL1y9A3qM3vqLCBRb8eIsOZYl8mWqfRmNh9l7nYqwWPIcVo4U5r1MyIpjcNKv_RLTxyxW98odvf-4l8Z0Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-sm left-sm text-white">
+<p class="text-caption font-bold">Social Science</p>
+<p class="text-[10px] opacity-80">12 Units • 98 Lectures</p>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 mb-xs">
+<div class="bg-tertiary h-full rounded-full" style="width: 95%"></div>
+</div>
+<p class="text-caption text-on-surface-variant font-bold">95% Content Ready</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Offline Library Management -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm flex flex-col">
+<div class="px-md py-sm bg-surface-container border-b border-outline-variant">
+<h3 class="text-label-md font-bold text-on-surface uppercase tracking-wide">Offline Material Library</h3>
+</div>
+<div class="p-md flex-grow space-y-md">
+<div class="flex items-center gap-sm">
+<div class="h-12 w-12 bg-surface-container rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<p class="text-label-md font-bold">Dispatch Center</p>
+<p class="text-caption text-on-surface-variant">42 Pending Shipments</p>
+</div>
+</div>
+<div class="space-y-xs">
+<p class="text-caption font-bold text-on-surface-variant uppercase">Inventory Status</p>
+<div class="p-sm bg-surface-container-low rounded-lg border border-outline-variant/30 flex justify-between items-center">
+<span class="text-body-md">Class 10 Math Kits</span>
+<span class="text-label-md font-bold text-error">Low: 14 left</span>
+</div>
+<div class="p-sm bg-surface-container-low rounded-lg border border-outline-variant/30 flex justify-between items-center">
+<span class="text-body-md">Class 12 Science Lab</span>
+<span class="text-label-md font-bold text-tertiary">In Stock: 412</span>
+</div>
+</div>
+<button class="w-full border border-primary text-primary font-bold py-sm rounded-lg hover:bg-primary/5 transition-colors mt-auto">
+                            Manage Inventory
+                        </button>
+</div>
+</div>
+</section>
+<!-- Robust Content Table Section -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden">
+<!-- Filter Bar -->
+<div class="p-md border-b border-outline-variant flex flex-wrap gap-md items-center justify-between">
+<h3 class="text-headline-md font-headline-md text-on-surface">Recent Content Uploads</h3>
+<div class="flex gap-sm items-center">
+<select class="bg-surface-container-low border-outline-variant rounded-lg text-label-md px-sm py-1.5 focus:ring-primary focus:border-primary">
+<option>Class 10</option>
+<option>Class 12</option>
+</select>
+<select class="bg-surface-container-low border-outline-variant rounded-lg text-label-md px-sm py-1.5 focus:ring-primary focus:border-primary">
+<option>All Subjects</option>
+<option>Mathematics</option>
+<option>Physics</option>
+<option>Chemistry</option>
+</select>
+<select class="bg-surface-container-low border-outline-variant rounded-lg text-label-md px-sm py-1.5 focus:ring-primary focus:border-primary">
+<option>Status: All</option>
+<option>Published</option>
+<option>Draft</option>
+</select>
+<button class="p-1.5 hover:bg-surface-container-high rounded-lg transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Table Content -->
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="px-md py-sm text-caption font-bold text-on-surface-variant uppercase tracking-wider">Content Title</th>
+<th class="px-md py-sm text-caption font-bold text-on-surface-variant uppercase tracking-wider">Subject</th>
+<th class="px-md py-sm text-caption font-bold text-on-surface-variant uppercase tracking-wider">Type</th>
+<th class="px-md py-sm text-caption font-bold text-on-surface-variant uppercase tracking-wider">Class</th>
+<th class="px-md py-sm text-caption font-bold text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-md py-sm text-caption font-bold text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-md py-md">
+<div class="flex items-center gap-sm">
+<div class="h-10 w-10 bg-primary/5 rounded flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+</div>
+<div>
+<p class="text-body-md font-bold leading-tight">Calculus: Limits & Derivatives</p>
+<p class="text-caption text-on-surface-variant">Uploaded 2h ago</p>
+</div>
+</div>
+</td>
+<td class="px-md py-md font-label-md text-on-surface-variant">Mathematics</td>
+<td class="px-md py-md">
+<span class="px-xs py-1 bg-primary/10 text-primary rounded text-[10px] font-bold uppercase">Video</span>
+</td>
+<td class="px-md py-md text-body-md">Class 12</td>
+<td class="px-md py-md">
+<div class="flex items-center gap-xs text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-caption font-bold uppercase">Published</span>
+</div>
+</td>
+<td class="px-md py-md text-right">
+<div class="flex justify-end gap-xs">
+<button class="p-xs hover:bg-primary/10 text-primary rounded transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="p-xs hover:bg-error/10 text-error rounded transition-colors"><span class="material-symbols-outlined" data-icon="visibility_off">visibility_off</span></button>
+<button class="p-xs hover:bg-surface-variant text-on-surface-variant rounded transition-colors"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-md py-md">
+<div class="flex items-center gap-sm">
+<div class="h-10 w-10 bg-secondary/5 rounded flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<div>
+<p class="text-body-md font-bold leading-tight">Organic Chemistry Notes</p>
+<p class="text-caption text-on-surface-variant">Uploaded 5h ago</p>
+</div>
+</div>
+</td>
+<td class="px-md py-md font-label-md text-on-surface-variant">Chemistry</td>
+<td class="px-md py-md">
+<span class="px-xs py-1 bg-secondary/10 text-secondary rounded text-[10px] font-bold uppercase">PDF</span>
+</td>
+<td class="px-md py-md text-body-md">Class 12</td>
+<td class="px-md py-md">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+<span class="text-caption font-bold uppercase">Draft</span>
+</div>
+</td>
+<td class="px-md py-md text-right">
+<div class="flex justify-end gap-xs">
+<button class="p-xs hover:bg-primary/10 text-primary rounded transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="p-xs hover:bg-error/10 text-error rounded transition-colors"><span class="material-symbols-outlined" data-icon="delete">delete</span></button>
+<button class="p-xs hover:bg-surface-variant text-on-surface-variant rounded transition-colors"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-md py-md">
+<div class="flex items-center gap-sm">
+<div class="h-10 w-10 bg-tertiary/5 rounded flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+</div>
+<div>
+<p class="text-body-md font-bold leading-tight">Quarterly Mock Exam - Set B</p>
+<p class="text-caption text-on-surface-variant">Uploaded Yesterday</p>
+</div>
+</div>
+</td>
+<td class="px-md py-md font-label-md text-on-surface-variant">All Subjects</td>
+<td class="px-md py-md">
+<span class="px-xs py-1 bg-tertiary/10 text-tertiary rounded text-[10px] font-bold uppercase">Quiz</span>
+</td>
+<td class="px-md py-md text-body-md">Class 10</td>
+<td class="px-md py-md">
+<div class="flex items-center gap-xs text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-caption font-bold uppercase">Published</span>
+</div>
+</td>
+<td class="px-md py-md text-right">
+<div class="flex justify-end gap-xs">
+<button class="p-xs hover:bg-primary/10 text-primary rounded transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="p-xs hover:bg-error/10 text-error rounded transition-colors"><span class="material-symbols-outlined" data-icon="visibility_off">visibility_off</span></button>
+<button class="p-xs hover:bg-surface-variant text-on-surface-variant rounded transition-colors"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Footer Pagination -->
+<div class="p-md bg-surface-container-low flex justify-between items-center border-t border-outline-variant">
+<p class="text-caption text-on-surface-variant font-bold">Showing 1 to 10 of 2,482 entries</p>
+<div class="flex items-center gap-xs">
+<button class="h-8 w-8 flex items-center justify-center border border-outline-variant rounded hover:bg-white transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="h-8 w-8 flex items-center justify-center bg-primary text-on-primary rounded font-bold text-caption">1</button>
+<button class="h-8 w-8 flex items-center justify-center border border-outline-variant rounded hover:bg-white transition-colors text-caption font-bold">2</button>
+<button class="h-8 w-8 flex items-center justify-center border border-outline-variant rounded hover:bg-white transition-colors text-caption font-bold">3</button>
+<button class="h-8 w-8 flex items-center justify-center border border-outline-variant rounded hover:bg-white transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Shell -->
+<footer class="w-full py-lg px-gutter grid grid-cols-1 md:grid-cols-4 gap-md bg-inverse-surface mt-auto text-surface-variant">
+<div class="col-span-1 md:col-span-1">
+<h4 class="text-headline-md font-headline-md text-primary-fixed mb-sm">Next Education</h4>
+<p class="text-body-md font-body-md">Dedicated to Bihar Board Excellence.</p>
+<p class="text-caption mt-md">© 2024 Next Education. All rights reserved.</p>
+</div>
+<div>
+<p class="text-label-md font-bold mb-sm text-white uppercase tracking-wider">Resources</p>
+<ul class="space-y-xs">
+<li><a class="text-body-md hover:text-white hover:underline transition-colors" href="#">Bihar Board Resources</a></li>
+<li><a class="text-body-md hover:text-white hover:underline transition-colors" href="#">Curriculum Guides</a></li>
+<li><a class="text-body-md hover:text-white hover:underline transition-colors" href="#">State Guidelines</a></li>
+</ul>
+</div>
+<div>
+<p class="text-label-md font-bold mb-sm text-white uppercase tracking-wider">Company</p>
+<ul class="space-y-xs">
+<li><a class="text-body-md hover:text-white hover:underline transition-colors" href="#">About Us</a></li>
+<li><a class="text-body-md hover:text-white hover:underline transition-colors" href="#">Contact Support</a></li>
+<li><a class="text-body-md hover:text-white hover:underline transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<p class="text-label-md font-bold mb-sm text-white uppercase tracking-wider">Legal</p>
+<ul class="space-y-xs">
+<li><a class="text-body-md hover:text-white hover:underline transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-body-md hover:text-white hover:underline transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</footer>
+</main>
+<!-- FAB Content Upload Trigger -->
+<button class="fixed bottom-gutter right-gutter h-14 w-14 bg-secondary text-on-secondary rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all flex items-center justify-center z-50 group">
+<span class="material-symbols-outlined text-2xl" data-icon="cloud_upload">cloud_upload</span>
+<span class="absolute right-full mr-sm bg-inverse-surface text-white px-sm py-1.5 rounded-lg text-caption font-bold opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">Upload New Content</span>
+</button>
+<script>
+        // Simple Interaction: Mock Search Focus
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-primary/20');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-primary/20');
+        });
+
+        // Hover effect for Table Rows
+        const rows = document.querySelectorAll('tbody tr');
+        rows.forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.querySelector('.material-symbols-outlined[data-icon="more_vert"]').classList.add('text-primary');
+            });
+            row.addEventListener('mouseleave', () => {
+                row.querySelector('.material-symbols-outlined[data-icon="more_vert"]').classList.remove('text-primary');
+            });
+        });
+    </script>
+</body></html>
